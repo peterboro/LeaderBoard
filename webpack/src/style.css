@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
+.firstContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: monospace;
+}
+
+.first-title {
+  display: flex;
+  position: absolute;
+  margin: 120px 790px 2px 0;
+}
+
+.score-btn {
+  display: flex;
+  position: absolute;
+  margin: 120px 600px 2px 200px;
+  text-decoration: none;
+  color: #989393;
+  background-color: #fff;
+  border: 1px solid #868181;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.score-btn:active,
+.score-btn:focus,
+.score-btn:hover {
+  background-color: #6c7070;
+  color: #fff;
+}
+
+.score-btn:hover {
+  border: 1px solid #000;
+}
+
+table {
+  position: fixed;
+  border: 3px solid;
+  width: 25%;
+  margin: 160px 600px 2px 0;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+input[type=submit] {
+  padding: 5px 15px;
+  background: #f1f1f4;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  float: right;
+}
+
+#board-input {
+  position: absolute;
+  margin: 160px 0 12px 0;
+}
+
+.second-title {
+  display: flex;
+  position: absolute;
+  margin: 120px 0 12px 0;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+input[type=text] {
+  padding: 5px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input[type=text]:focus {
+  border-color: #333;
+}
+
+input[type=number] {
+  padding: 5px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input[type=number]:focus {
+  border-color: #333;
+}
