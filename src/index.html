@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>LEADERBOARD</title>
+</head>
+
+<body>
+  <div class="firstContainer">
+    <button type="button" class="score-btn" onClick="window.location.reload();">Refresh</button>
+    <h1 class="first-title"> Recent Scores </h1> 
+    <table class="table table-container">
+      <thead>
+        <tr>
+          <th> Name </th>
+          <th> Score </th>
+        </tr>
+      </thead>
+      <tbody id="list-board"></tbody>
+    </table>
+
+    <h2 class="second-title"> Add Your Score </h2>
+    <form id="board-input">
+      <div class="board-group">
+        <label for="name">
+          <input type="text" id="name" class="board-content" placeholder="name">
+        </label>
+      </div><br>
+      <div class="board-group">
+        <label for="score">
+          <input type="number" id="score" class="board-content" placeholder="score" min="0" max="1000">
+        </label>
+      </div><br>
+      <input type="submit" value="Submit" class="btn-submit">
+    </form>
+  </div>
+
+  <script src="./index.js" type="module"></script>
+
+</body>
+
+</html>
