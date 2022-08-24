@@ -17,7 +17,7 @@
   margin: 120px 790px 2px 0;
 }
 
-.score-btn {
+.button {
   display: flex;
   position: absolute;
   margin: 120px 600px 2px 200px;
@@ -29,14 +29,14 @@
   padding: 5px 15px;
 }
 
-.score-btn:active,
-.score-btn:focus,
-.score-btn:hover {
+.button:active,
+.button:focus,
+.button:hover {
   background-color: #6c7070;
   color: #fff;
 }
 
-.score-btn:hover {
+.button:hover {
   border: 1px solid #000;
 }
 
