@@ -1,41 +1,34 @@
-import Scores from './modules/scores.js';
-import Store from './modules/storage.js';
 import './style.css';
+import Scoreboard from './scoreboard.js';
+import Task from './Task.js';
 
-class task {
-  static currentScores() {
-    const scores = Store.getScores();
-    scores.forEach((board) => task.addScoreList(board));
-  }
+const addForm = document.querySelector('form');
+const nameValue = document.querySelector('#name');
+const scoreValue = document.querySelector('#score');
+const refresh = document.querySelector('button');
 
-  static addScoreList(board) {
-    const list = document.querySelector('#list-board');
-    const row = document.createElement('tr');
-    row.innerHTML = `<td>${board.name}</td>
-    <td>${board.score}</td>`;
-    list.appendChild(row);
-  }
+const scoreboard = new Scoreboard();
+const task = new Task();
 
-  static clearField() {
-    document.querySelector('#name').value = '';
-    document.querySelector('#score').value = '';
-  }
-}
+let gameId;
+const startGame = () => {
+  scoreboard
+    .startGame('Project')
+    .then((response) => response.result.split(' '))
+    .then((res) => {
+      [gameId] = [res[1]];
+    });
+};
 
-document.addEventListener('DOMContentLoaded', task.currentScores);
-document.querySelector('#board-input').addEventListener('submit', (e) => {
-  e.preventDefault();
+const getScores = () => {
+  scoreboard.getScores(gameId).then((response) => task.addToTask(response.result));
+};
 
-  const name = document.querySelector('#name').value;
-  const score = document.querySelector('#score').value;
+const postScore = () => {
+  scoreboard.postScore(gameId, nameValue.value, scoreValue.value);
+  task.cleanInputs();
+};
 
-  if (name === '' || score === '') {
-    task.showAlert('Please fill in all fields');
-  } else {
-    const board = new Scores(name, score);
-
-    task.addScoreList(board);
-    Store.addScore(board);
-    task.clearField();
-  }
-});
+document.addEventListener('DOMContentLoaded', startGame);
+addForm.addEventListener('submit', postScore);
+refresh.addEventListener('click', getScores);
