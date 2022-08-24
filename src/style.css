@@ -26,7 +26,6 @@
   background-color: #fff;
   border: 1px solid #868181;
   border-radius: 5px;
-  color: #000;
   padding: 5px 15px;
 }
 
@@ -40,7 +39,6 @@
 .button:hover {
   border: 1px solid #000;
 }
-
 
 table {
   position: fixed;
