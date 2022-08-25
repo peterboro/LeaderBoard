@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   border: 0;
+  background-color: rgb(197, 226, 226);
 }
 
 .firstContainer {
@@ -9,6 +10,16 @@
   flex-direction: column;
   align-items: center;
   font-family: monospace;
+  margin: 120px 1px 120px 10px;
+  border: 2px solid;
+  width: 1200px;
+  max-width: calc(100% - 20px);
+}
+
+.firstTitle {
+  display: flex;
+  position: absolute;
+  margin: 50px 790px 2px 0;
 }
 
 .first-title {
@@ -40,21 +51,34 @@
   border: 1px solid #000;
 }
 
-table {
-  position: fixed;
-  border: 3px solid;
-  width: 25%;
+.table {
+  width: 400px;
+  table-layout: fixed;
+  border-collapse: collapse;
   margin: 160px 600px 2px 0;
 }
 
-th,
-td {
-  text-align: left;
-  padding: 8px;
+.table tbody {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  height: 100px;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+.table thead tr {
+  display: block;
+}
+
+.table thead {
+  background: black;
+  color: #fff;
+}
+
+.table th,
+.table td {
+  padding: 5px;
+  text-align: left;
+  width: 200px;
 }
 
 input[type=submit] {
