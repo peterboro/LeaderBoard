@@ -16,6 +16,12 @@
   max-width: calc(100% - 20px);
 }
 
+.firstTitle {
+  display: flex;
+  position: absolute;
+  margin: 50px 790px 2px 0;
+}
+
 .first-title {
   display: flex;
   position: absolute;
